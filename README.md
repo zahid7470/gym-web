@@ -18,7 +18,7 @@ Built from a comprehensive Design Requirement Document (DRD), this project demon
 
 Experience the live application here:
 
-**🌐 Live Website:** [https://gym-web-m3x6.vercel.app/](https://forgehaus-gym.vercel.app) *(Placeholder)*
+**🌐 Live Website:** [https://gym-web-m3x6.vercel.app/](https://gym-web-m3x6.vercel.app/) 
 
 <br />
 
