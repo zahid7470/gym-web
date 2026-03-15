@@ -1,0 +1,32 @@
+/* ============================================
+   Section Header Styles
+   ============================================ */
+
+.section-header {
+  margin-bottom: var(--space-8);
+}
+
+.header-center {
+  text-align: center;
+}
+
+.header-center .section-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-left {
+  text-align: left;
+}
+
+.header-left .section-subtitle {
+  margin-left: 0;
+}
+
+/* Eyebrow and title classes are defined in index.css */
+
+@media (max-width: 768px) {
+  .section-header {
+    margin-bottom: var(--space-6);
+  }
+}

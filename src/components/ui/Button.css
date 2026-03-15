@@ -1,0 +1,125 @@
+/* ============================================
+   Button Styles
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Primary Button */
+.btn-primary {
+  background: var(--ember-amber);
+  color: var(--forge-black);
+  padding: 16px 40px;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  border-radius: 2px;
+  box-shadow: var(--shadow-amber);
+}
+
+.btn-primary:hover {
+  background: var(--molten-gold);
+  box-shadow: var(--shadow-amber-hover);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0px 2px 10px rgba(212, 130, 10, 0.2);
+}
+
+/* Ghost Button */
+.btn-ghost {
+  background: transparent;
+  color: var(--iron-white);
+  padding: 15px 38px;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  border-radius: 2px;
+  border: 1.5px solid var(--iron-white);
+}
+
+.btn-ghost:hover {
+  border-color: var(--ember-amber);
+  color: var(--ember-amber);
+}
+
+.btn-ghost.dark-variant {
+  border-color: var(--forge-black);
+  color: var(--forge-black);
+}
+
+.btn-ghost.dark-variant:hover {
+  background: var(--forge-black);
+  color: var(--ember-amber);
+}
+
+/* Text Link Button */
+.btn-text {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--ember-amber);
+  padding: 0;
+  text-transform: none;
+  letter-spacing: normal;
+  position: relative;
+}
+
+.btn-icon-right {
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.btn-text::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--ember-amber);
+  transition: width 0.2s ease;
+}
+
+.btn-text:hover .btn-icon-right {
+  transform: translateX(4px);
+}
+
+.btn-text:hover::after {
+  width: 100%;
+}
+
+/* Icon Button */
+.btn-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--steel-gray);
+  color: var(--iron-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-icon:hover {
+  background: var(--ember-amber);
+  color: var(--forge-black);
+  transform: scale(1.1);
+}

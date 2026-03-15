@@ -1,0 +1,134 @@
+/* ============================================
+   CTA Banner Styles
+   ============================================ */
+
+/* --- Full Width Amber Banner --- */
+.cta-banner {
+  background: var(--ember-amber);
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-9) 0;
+  text-align: center;
+}
+
+.cta-banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Noise texture fallback and abstract lines */
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(0,0,0,0.05) 0%, transparent 20%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Subtle line pattern overlay */
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(13, 13, 13, 0.08) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(13, 13, 13, 0.08) 1px, transparent 1px);
+  pointer-events: none;
+}
+
+.cta-banner-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-banner-title {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--forge-black);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: var(--space-3);
+}
+
+.cta-banner-subtitle {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: rgba(13, 13, 13, 0.65);
+  margin-bottom: var(--space-6);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-banner-actions {
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Inline Dark Block --- */
+.cta-inline {
+  background: var(--steel-gray);
+  border-left: 4px solid var(--ember-amber);
+  padding: 48px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.cta-inline-content {
+  flex: 1;
+}
+
+.cta-inline-title {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  color: var(--iron-white);
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+  line-height: 1.2;
+}
+
+.cta-inline-subtitle {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--ash-gray);
+  max-width: 500px;
+}
+
+.cta-inline-actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .cta-banner {
+    padding: var(--space-8) 0;
+  }
+  
+  .cta-banner-title {
+    font-size: 40px;
+  }
+  
+  .cta-inline {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+  }
+  
+  .cta-inline-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cta-inline-actions .btn {
+    width: 100%;
+  }
+}

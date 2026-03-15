@@ -1,0 +1,251 @@
+/* ============================================
+   Programs Page Styles
+   ============================================ */
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+.pt-12 {
+  padding-top: 64px;
+}
+
+.pb-12 {
+  padding-bottom: 64px;
+}
+
+.text-amber {
+  color: var(--ember-amber);
+}
+
+.text-gray {
+  color: var(--ash-gray);
+}
+
+.text-forge {
+  color: var(--forge-black);
+}
+
+/* --- Tabs Nav --- */
+.tabs-nav {
+  display: flex;
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.tabs-nav::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.tab-btn {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ash-gray);
+  padding: var(--space-4) var(--space-6);
+  text-transform: uppercase;
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.tab-btn:hover {
+  color: var(--iron-white);
+}
+
+.tab-btn.active {
+  color: var(--ember-amber);
+}
+
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--ember-amber);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tab-btn.active::after {
+  transform: scaleX(1);
+}
+
+/* --- Tab Content --- */
+.tab-content-wrapper {
+  min-height: 600px;
+}
+
+.tab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.tab-image-wrap {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.tab-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0; left: 0;
+}
+
+.tab-image-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, rgba(13,13,13,0.4), transparent);
+}
+
+/* --- Program Details Text --- */
+.detail-row {
+  display: flex;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.detail-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ember-amber);
+  text-transform: uppercase;
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.detail-value {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--iron-white);
+}
+
+.included-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ember-amber);
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+}
+
+.included-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.included-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--iron-white);
+}
+
+/* --- Comparison Table --- */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-family: var(--font-body);
+  font-size: 16px;
+}
+
+.comparison-table th {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  color: var(--ash-gray);
+  font-weight: 600;
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+
+.comparison-table th:first-child {
+  font-family: var(--font-mono);
+  color: var(--ember-amber);
+}
+
+.comparison-table td:first-child {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--iron-white);
+}
+
+.highlight-col {
+  background: var(--ember-amber);
+  color: var(--forge-black) !important;
+}
+
+.comparison-table th.highlight-col {
+  color: var(--forge-black) !important;
+  border-bottom-color: var(--molten-gold);
+}
+
+.comparison-table td.highlight-col {
+  font-weight: 500;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .tab-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tab-image-wrap {
+    order: -1;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .included-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .detail-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .tab-btn {
+    font-size: 16px;
+    padding: var(--space-3) var(--space-4);
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 16px;
+    font-size: 14px;
+  }
+}

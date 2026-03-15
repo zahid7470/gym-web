@@ -1,0 +1,25 @@
+/* ============================================
+   Membership Page Styles
+   ============================================ */
+
+.pricing-margin-top {
+  margin-top: -80px;
+  position: relative;
+  z-index: 10;
+}
+
+.membership-table th.block-header {
+  background: var(--ember-amber);
+  color: var(--forge-black) !important;
+  border-bottom: 0;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+  .pricing-margin-top {
+    margin-top: var(--space-4);
+  }
+}

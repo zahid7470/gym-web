@@ -1,0 +1,208 @@
+/* ============================================
+   About Page Styles
+   ============================================ */
+
+/* Shared Page Hero (Used across multiple pages) */
+.page-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+}
+
+.page-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%); /* Adds drama */
+}
+
+.page-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, rgba(13, 13, 13, 0.4) 0%, rgba(13, 13, 13, 0.95) 100%);
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 80px;
+  line-height: 1;
+  color: var(--iron-white);
+  text-transform: uppercase;
+  margin-top: var(--space-4);
+}
+
+.pb-32 {
+  padding-bottom: 128px !important;
+}
+
+.mb-12 {
+  margin-bottom: 48px;
+}
+
+/* --- Origin Story --- */
+.story-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--iron-white);
+  padding: 0 20px;
+}
+
+.story-text p {
+  margin-bottom: var(--space-6);
+}
+
+.story-text p:last-child {
+  margin-bottom: 0;
+  color: var(--ash-gray);
+}
+
+/* --- Mission & Vision --- */
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+}
+
+.mission-card {
+  position: relative;
+  padding: 40px;
+  background: var(--forge-black);
+  border-left: 2px solid var(--ember-amber);
+}
+
+.mission-quote-mark {
+  position: absolute;
+  top: 10px; right: 20px;
+  font-family: var(--font-quote);
+  font-size: 120px;
+  color: var(--ember-amber);
+  opacity: 0.1;
+  line-height: 1;
+}
+
+.mission-text {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--iron-white);
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Core Values --- */
+.value-card {
+  padding: 32px;
+  background: var(--forge-black);
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ember-amber);
+}
+
+.value-title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: var(--iron-white);
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.value-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ash-gray);
+  line-height: 1.6;
+}
+
+/* --- Facilities Bento Grid --- */
+.facilities-bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 300px);
+  gap: var(--space-4);
+}
+
+.facility-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.facility-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.facility-img:hover img {
+  transform: scale(1.05);
+}
+
+.facility-img::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.facility-caption {
+  position: absolute;
+  bottom: 24px; left: 24px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ember-amber);
+  letter-spacing: 0.1em;
+  z-index: 1;
+}
+
+.bento-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.bento-wide {
+  grid-column: span 2;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .page-hero-title { font-size: 64px; }
+  .mission-grid { grid-template-columns: 1fr; gap: var(--space-6); }
+  .facilities-bento {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    auto-rows: 300px;
+  }
+  .bento-large { grid-column: span 2; grid-row: span 1; }
+}
+
+@media (max-width: 768px) {
+  .page-hero-title { font-size: 48px; }
+  .story-text { padding: 0; font-size: 16px; }
+  .facilities-bento {
+    display: flex;
+    flex-direction: column;
+  }
+  .facility-img { height: 250px; }
+}
